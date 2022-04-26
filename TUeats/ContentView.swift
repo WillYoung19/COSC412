@@ -123,6 +123,13 @@ struct ProductScreen: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
 
+                ScrollView{
+                    ProductListItem(productName: "Pizza", productPrice: 10.5)
+                        .padding(.bottom, -2)
+                    ProductListItem(productName: "Water", productPrice: 1)
+                        .padding(.bottom, -2)
+                }
+                
                 Spacer()
                 
                 HStack {
@@ -151,9 +158,6 @@ struct ProductScreen: View {
                     }
                 }
             }
-            
-            //ProductListItem(productName: "Pizza", price: 10.5)
-
         }
     }
 }
@@ -169,21 +173,41 @@ struct CartScreen: View {
     }
 }
 
+
 struct ProductListItem: View {
     var productName: String = "Item"
-    var price: Float = 0
+    var productPrice: Float = 0
     
     var body: some View {
-        VStack{
-            
-            Text(productName)
+            HStack{
+                
+                Group{
+                    Text(productName + "\n")
+                        .fontWeight(.bold) +
+                    
+                    Text("Price: $" + String(productPrice))
+                }
+                .padding(.leading, 6)
+                .padding(.top, 6)
+                .padding(.bottom, 6)
+
+                .font(.title2)
                 .foregroundColor(.white)
-            
-            Text(String(price))
-                .foregroundColor(.white)
-            
-            
-        }
+
+                Spacer()
+
+                Group{
+                    Text("- ")
+                    Text("0")
+                    Text(" +")
+                    
+                }.font(.title2)
+                .foregroundColor(.blue)
+            }
+            .frame(width: screenWidth)
+            .background(Color.darkGray4)
+            .cornerRadius(10.0)
+
     }
 }
 
@@ -195,7 +219,6 @@ struct RestaurantBox<DestinationScreen: View>: View {
 
     let boxWidth: CGFloat = (screenWidth / 2) - 14
     let boxHeight: CGFloat = 200
-    
     var body: some View {
         NavigationLink(destination: nextScreen, label: {
             
