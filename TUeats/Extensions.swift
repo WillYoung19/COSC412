@@ -20,6 +20,4 @@ extension Color {
 
     static let lightBlue1 = Color(red: 0.160, green: 0.376, blue: 1.0)
     static let lightBlue2 = Color(red: 0.039, green: 0.580, blue: 1.0)
-
-    //0.160, 0.376, 1
 }
