@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct LoginScreen: View {
+    @State private var username: String = ""
+    @State private var password: String = ""
+
     var body: some View {
         NavigationView{
             ZStack{
@@ -19,7 +22,7 @@ struct LoginScreen: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                        .padding(.top, 50)
+                        .padding(.top, 80)
                 
                     Image("TUTiger")
                         .resizable()
@@ -27,8 +30,23 @@ struct LoginScreen: View {
 
                     Spacer()
                     
+                    Group{
+                        SecureField("", text: $username)
+                            .placeholder(when: username.isEmpty) {
+                                Text("Enter Username").foregroundColor(.white)}
+                        SecureField("", text: $password)
+                            .placeholder(when: password.isEmpty) {
+                                Text("Enter password").foregroundColor(.white)}
+                    }.foregroundColor(.white)
+                        .frame(width:300, height:40)
+                        .padding(.leading, 10)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.darkGray4))
+
+                    Spacer()
+                    
                     LoginButton(buttonText: "Login")
                     LoginButton(buttonText: "Register")
+                    
 
                     NavigationLink(destination: MainScreen().navigationBarBackButtonHidden(true), label: {
                         Text("Login as Guest")
@@ -36,7 +54,7 @@ struct LoginScreen: View {
                             .fontWeight(.semibold)
                             .underline()
                             .foregroundColor(.blue)
-                            .frame(width: 260 , height: 50, alignment: .center)
+                            .frame(width: 260, height: 50, alignment: .center)
                             //.cornerRadius(10.0)
                     })
                 }
@@ -56,10 +74,9 @@ struct LoginButton: View {
                 .font(.headline)
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
-                .frame(width: 260 , height: 50, alignment: .center)
-                .background(Color.darkGray4)
+                .frame(width: 260, height: 50, alignment: .center)
+                .background(Color.blue)
                 .cornerRadius(10.0)
-
         }
     }
 }
