@@ -30,4 +30,3 @@ struct ProductScreen_Previews: PreviewProvider {
         ProductScreen()
     }
 }
-

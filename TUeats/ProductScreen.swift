@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+
+
+
 struct ProductScreen: View {
     
     let boxWidth: CGFloat = (screenWidth / 2) - 14
@@ -18,33 +21,11 @@ struct ProductScreen: View {
             Color.darkGray3.edgesIgnoringSafeArea(.all)
             
             VStack{
-                HStack {
-                    Text("Select Products")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.leading, 10)
-            
-                    Spacer()
-                    
-                    NavigationLink(destination: CartScreen(), label: {
-                        Image(systemName: "cart")
-                            .resizable()
-                            .frame(width:30, height:30)
-                            .padding(.trailing, 20)
-                            .foregroundColor(.blue)
-                    })
-
-                }
-                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
-
                 ScrollView{
                     ProductListItem(product: productList[0])
                         .padding(.bottom, -2)
-
                 }
 
-                
                 Spacer()
                 
                 HStack {
@@ -59,7 +40,6 @@ struct ProductScreen: View {
                             .background(Color.darkGray4)
                             .cornerRadius(10.0)
                     }
-                    
                     Button {
                         print("button pressed")
                     } label: {
@@ -74,6 +54,14 @@ struct ProductScreen: View {
                 }
             }
         }
+        .navigationTitle("Select Products")
+        .navigationBarItems(trailing:
+                        NavigationLink(destination: CartScreen(), label: {
+                            Image(systemName: "cart")
+                                .resizable()
+                                .frame(width:30, height:30)
+                                .foregroundColor(.blue)
+                        }))
     }
 }
 

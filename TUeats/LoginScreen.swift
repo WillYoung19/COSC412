@@ -19,31 +19,47 @@ struct LoginScreen: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                        .padding(.bottom, 600)
+                        .padding(.top, 50)
                 
-                    Button {
-                        print("button pressed")
-                    } label: {
-                        Text("Login")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .frame(width: 260 , height: 50, alignment: .center)
-                            .background(Color.darkGray4)
-                            .cornerRadius(10.0)
-                    }
+                    Image("TUTiger")
+                        .resizable()
+                        .frame(width:260, height:233)
+
+                    Spacer()
                     
+                    LoginButton(buttonText: "Login")
+                    LoginButton(buttonText: "Register")
+
                     NavigationLink(destination: MainScreen().navigationBarBackButtonHidden(true), label: {
                         Text("Login as Guest")
                             .font(.headline)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                            .underline()
+                            .foregroundColor(.blue)
                             .frame(width: 260 , height: 50, alignment: .center)
-                            .background(Color.darkGray4)
-                            .cornerRadius(10.0)
+                            //.cornerRadius(10.0)
                     })
                 }
             }.navigationBarHidden(true)
+        }
+    }
+}
+
+struct LoginButton: View {
+    var buttonText = ""
+    
+    var body: some View {
+        Button {
+            print("button pressed")
+        } label: {
+            Text(buttonText)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .frame(width: 260 , height: 50, alignment: .center)
+                .background(Color.darkGray4)
+                .cornerRadius(10.0)
+
         }
     }
 }
