@@ -25,8 +25,8 @@ struct MainScreen_Previews: PreviewProvider {
     }
 }
 
-struct ProductScreen_Previews: PreviewProvider {
+struct CartScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ProductScreen()
+        CartScreen()
     }
 }

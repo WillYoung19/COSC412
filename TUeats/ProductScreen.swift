@@ -12,7 +12,8 @@ import SwiftUI
 
 
 struct ProductScreen: View {
-    
+    var selectedRestaurant: Restaurant
+
     let boxWidth: CGFloat = (screenWidth / 2) - 14
     let boxHeight: CGFloat = 50
     
@@ -22,16 +23,30 @@ struct ProductScreen: View {
             
             VStack{
                 ScrollView{
-                    ProductListItem(product: productList[0])
-                        .padding(.bottom, -2)
+                    if (selectedRestaurant.name == "Newell Den"){
+                        ForEach(productList1, id: \.id){ product in
+                            ProductListItem(product: product)
+                                .padding(.bottom, -2)
+                        }
+                    }
+                    else if (selectedRestaurant.name == "Au Bon Pain"){
+                        ForEach(productList2, id: \.id){ product in
+                            ProductListItem(product: product)
+                                .padding(.bottom, -2)
+                        }
+                    }
+                    else if (selectedRestaurant.name == "Deli"){
+                        ForEach(productList3, id: \.id){ product in
+                            ProductListItem(product: product)
+                                .padding(.bottom, -2)
+                        }
+                    }
                 }
 
                 Spacer()
                 
                 HStack {
-                    Button {
-                        print("button pressed")
-                    } label: {
+                    NavigationLink(destination: CartScreen(), label: {
                         Text("Checkout")
                             .font(.headline)
                             .fontWeight(.semibold)
@@ -39,7 +54,8 @@ struct ProductScreen: View {
                             .frame(width: boxWidth , height: boxHeight)
                             .background(Color.darkGray4)
                             .cornerRadius(10.0)
-                    }
+                    })
+                    
                     Button {
                         print("button pressed")
                     } label: {
@@ -97,7 +113,7 @@ struct ProductListItem: View {
                     .background(Color.darkGray2)
                     .cornerRadius(20.0)
 
-                    Text(" " + String(product.quantity) + " ")
+                    Text(" 0 ")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
 

@@ -14,6 +14,8 @@ struct CartScreen: View {
             Color.darkGray2.edgesIgnoringSafeArea(.all)
             
             
-        }
+        }.navigationTitle("My Cart")
+
+
     }
 }

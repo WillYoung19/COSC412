@@ -12,14 +12,42 @@ let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
 let screenHeight = screenSize.height
 
-var productList = [Product(name: "Pizza", price: 10),
-                   Product(name: "Water", price: 1.50)]
+var productList1 = [Product(name: "Pizza", price: 10, rname: "Newell Den"),
+                   Product(name: "Water", price: 1.50, rname: "Newell Den")]
+
+var productList2 = [Product(name: "Pizza", price: 15, rname: "Au Bon Pain"),
+                   Product(name: "Water", price: 2.50, rname: "Au Bon Pain")]
+
+var productList3 = [Product(name: "Pizza", price: 1, rname: "Deli")]
+
+var restaurantList = [Restaurant(name: "Newell Den", isClosed: false),
+                      Restaurant(name: "Au Bon Pain", isClosed: false),
+                      Restaurant(name: "Deli", isClosed: false)]
 
 struct Product: Identifiable {
     var id = UUID()
     var name: String
     var price: Double
-    var quantity: Int = 0
+    var rname: String
+}
+
+struct Restaurant: Identifiable {
+    var id = UUID()
+    var name: String
+    var isClosed: Bool = false
+}
+
+class CartMgr {
+    var products: [Product] = []
+    var total_price: Double = 0
     
+    func addToCart(product: Product){
+        products.append(product)
+        total_price += product.price
+    }
+    func removeFromCart(product: Product){
+        products = products.filter {$0.id != product.id}
+        total_price -= product.price
+    }
 }
 

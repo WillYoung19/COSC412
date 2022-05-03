@@ -55,7 +55,6 @@ struct LoginScreen: View {
                             .underline()
                             .foregroundColor(.blue)
                             .frame(width: 260, height: 50, alignment: .center)
-                            //.cornerRadius(10.0)
                     })
                 }
             }.navigationBarHidden(true)

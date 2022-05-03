@@ -23,36 +23,31 @@ struct MainScreen: View {
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.leading, 14)
                     .padding(.top, 10)
-
-                //For each restauant in the DB, create a Restaurant box
-                WrappingHStack{
-                    RestaurantBox(nextScreen: ProductScreen(), rName: "Newell Den", isClosed: false)
-                    RestaurantBox(nextScreen: ProductScreen(), rName: "Au Bon Pain", isClosed: false)
-                    RestaurantBox(nextScreen: ProductScreen(), rName: "Deli", isClosed: true)
-                        .padding(.top, 6)
-                }
-                .padding(.leading, 10)
-
                 
+                WrappingHStack{
+                    RestaurantBox(restaurant: restaurantList[0])
+                    RestaurantBox(restaurant: restaurantList[1])
+                    RestaurantBox(restaurant: restaurantList[2])
+                        .padding(.top, 6)
+                }.padding(.leading, 10)
+                                
                 Spacer()
             }
         }.navigationBarHidden(true)
     }
 }
 
-struct RestaurantBox<DestinationScreen: View>: View {
-    var nextScreen: DestinationScreen
-    var rName: String = "Restaurant Name"
-    var isClosed: Bool = false
+struct RestaurantBox: View {
+    var restaurant: Restaurant
 
     let boxWidth: CGFloat = (screenWidth / 2) - 14
     let boxHeight: CGFloat = 200
     var body: some View {
-        NavigationLink(destination: nextScreen, label: {
+        NavigationLink(destination: ProductScreen(selectedRestaurant: restaurant), label: {
             
             VStack(alignment: .leading, spacing: 4){
                 
-            Text(rName)
+                Text(restaurant.name)
                 .foregroundColor(.white)
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -60,9 +55,9 @@ struct RestaurantBox<DestinationScreen: View>: View {
                 .padding(.leading, 6)
                 .padding(.top, 6)
                 
-                RestaurantStatusText(isClosed: isClosed)        .padding(.leading, 6)
-
-        
+                RestaurantStatusText(restaurant: restaurant)
+                    .padding(.leading, 6)
+                
             }.frame(width: boxWidth, height: boxHeight, alignment: .topLeading)
                 .background(Color.darkGray3)
                 .cornerRadius(20.0)
@@ -72,10 +67,10 @@ struct RestaurantBox<DestinationScreen: View>: View {
 }
 
 struct RestaurantStatusText: View {
-    var isClosed: Bool = false
-    
+    var restaurant: Restaurant
+
     var body: some View {
-        if(isClosed == false){
+        if(restaurant.isClosed == false){
             Text("Status: ")
                 .foregroundColor(.white) +
             Text("Open")
