@@ -12,10 +12,11 @@ struct CartScreen: View {
     var body: some View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
-            
-            
+            VStack{
+                
+                
+
+            }
         }.navigationTitle("My Cart")
-
-
     }
 }

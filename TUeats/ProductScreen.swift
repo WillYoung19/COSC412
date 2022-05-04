@@ -98,12 +98,23 @@ struct ProductListItem: View {
                 .font(.title2)
                 .foregroundColor(.white)
 
+                Button {
+                    //Add to cart
+                } label: {
+                    Text("Update")
+                        .foregroundColor(.white)
+                }
+                .frame(width: 100, height: 30)
+                .background(Color.darkGray3)
+                .cornerRadius(6.0)
+                .padding(.leading, 50)
+
                 Spacer()
 
                 Group{
                     Button {
                         if (qty > 0){
-                            qty -= 0
+                            qty -= 1
                         }
                         else{
                             qty = 0
@@ -131,16 +142,16 @@ struct ProductListItem: View {
                     .background(Color.darkGray2)
                     .cornerRadius(20.0)
                     .padding(.trailing, 20)
-
                     
                 }
                 .font(.title2)
                 .foregroundColor(.black)
+            
                 
             }
             .frame(width: screenWidth)
             .background(Color.darkGray4)
             .cornerRadius(10.0)
-    
+            
     }
 }
