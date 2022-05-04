@@ -1,0 +1,45 @@
+"ItemsID";"EID";"ItemName";"Cost";"Quantity"
+"0001";1;"Everything Bagel";2.29;0
+"0002";1;"Cinnamon Crisp Bagel";1.99;0
+"0003";1;"Chocolate Chip Brownie";2.99;0
+"0004";1;"Crumb Cake";2.99;0
+"0005";1;"Pecan Roll";2.59;0
+"0006";1;"Apple Croissant";2.99;0
+"0007";1;"Lemon Danish";3.29;0
+"0008";1;"Strawberry Smoothie";4.19;0
+"0009";1;"Vanilla Latte";4.39;0
+"0010";1;"French Roast Coffee";4.59;0
+"0011";1;"Bacon and Egg Bagel";3.99;0
+"0012";1;"Spicy Tuna Sandwich";4.79;0
+"0013";1;"Blueberry Yogurt";1.79;0
+"0014";2;"Cheese Pizza Slice";3.49;0
+"0015";2;"Pepperoni Pizza Slice";3.69;0
+"0016";2;"Whole Cheese Pizza";15.99;0
+"0017";2;"Whole Pepperoni Pizza";17.99;0
+"0018";2;"Chicken Parmesan";7.99;0
+"0019";2;"Spaghetti and Metballs";7.99;0
+"0020";2;"Baked Ziti";7.29;0
+"0021";2;"Stromboli";4.99;0
+"0022";2;"Breadsticks(2)";3.29;0
+"0023";3;"Italian Sub";10.99;0
+"0024";3;"Turkey Club";10.29;0
+"0025";3;"Classic Reuben";10.99;0
+"0026";3;"London Broi Wrap";10.29;0
+"0027";3;"Blazing Buffalo Sandwich";11.99;0
+"0028";3;"SmokeMaster Panini";11.29;0
+"0029";3;"Ichiban Sandwich";10.29;0
+"0030";3;"Heart Healthy Sandwich";10.99;0
+"0031";4;"Eggplant Tofu";9.7;0
+"0032";4;"Black Pepper Chicken";6.9;0
+"0033";4;"Kung Pao Chicken";6.9;0
+"0034";4;"String Bean Chicken";9.7;0
+"0035";4;"Sweet and Sour Chicken";9.7;0
+"0036";4;"Beijing Beef";8.5;0
+"0037";4;"Broccoil Beef";8.5;0
+"0038";4;"Honey Walnut Shrimp";9.7;0
+"0039";4;"Chicken Egg Roll";4.9;0
+"0040";4;"Vegetable Spring Roll";3.9;0
+"0041";4;"Chow Mein";3.7;0
+"0042";4;"Fried Rice";3.7;0
+"0043";4;"White Steamed Rice";3.7;0
+"0044";4;"Chicken Potstickers";5.9;0
