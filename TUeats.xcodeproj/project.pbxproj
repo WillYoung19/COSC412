@@ -18,13 +18,9 @@
 		CA9F578E2819043900EE583D /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F578D2819043900EE583D /* MainScreen.swift */; };
 		CA9F5790281904C500EE583D /* ProductScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F578F281904C500EE583D /* ProductScreen.swift */; };
 		CA9F57922819054F00EE583D /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9F57912819054F00EE583D /* CartScreen.swift */; };
-		FD1A2D45721AAE9362884185 /* Pods_TUeats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A7650D5763550625F31157 /* Pods_TUeats.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		172E6C2EE1DAA906EB3D9DA5 /* Pods-TUeats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TUeats.release.xcconfig"; path = "Target Support Files/Pods-TUeats/Pods-TUeats.release.xcconfig"; sourceTree = "<group>"; };
-		67A7650D5763550625F31157 /* Pods_TUeats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TUeats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05C332DC76A0047F3EF0873 /* Pods-TUeats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TUeats.debug.xcconfig"; path = "Target Support Files/Pods-TUeats/Pods-TUeats.debug.xcconfig"; sourceTree = "<group>"; };
 		CA56F8FE28136E2600470A40 /* TUeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA56F90128136E2600470A40 /* TUeatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUeatsApp.swift; sourceTree = "<group>"; };
 		CA56F90328136E2600470A40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,30 +40,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9F57862817346500EE583D /* WrappingHStack in Frameworks */,
-				FD1A2D45721AAE9362884185 /* Pods_TUeats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		817B68C820795AE217B1AFE0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C05C332DC76A0047F3EF0873 /* Pods-TUeats.debug.xcconfig */,
-				172E6C2EE1DAA906EB3D9DA5 /* Pods-TUeats.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		CA56F8F528136E2600470A40 = {
 			isa = PBXGroup;
 			children = (
 				CA56F90028136E2600470A40 /* TUeats */,
 				CA56F8FF28136E2600470A40 /* Products */,
-				817B68C820795AE217B1AFE0 /* Pods */,
-				D693649DD09A8D6617990069 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,14 +87,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D693649DD09A8D6617990069 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				67A7650D5763550625F31157 /* Pods_TUeats.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,11 +94,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA56F90C28136E2800470A40 /* Build configuration list for PBXNativeTarget "TUeats" */;
 			buildPhases = (
-				0D7CD47EC40F8E6DB4CA8D68 /* [CP] Check Pods Manifest.lock */,
 				CA56F8FA28136E2600470A40 /* Sources */,
 				CA56F8FB28136E2600470A40 /* Frameworks */,
 				CA56F8FC28136E2600470A40 /* Resources */,
-				FC9E81D7C488F70742D45F5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,48 +157,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0D7CD47EC40F8E6DB4CA8D68 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TUeats-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC9E81D7C488F70742D45F5C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TUeats/Pods-TUeats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TUeats/Pods-TUeats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TUeats/Pods-TUeats-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA56F8FA28136E2600470A40 /* Sources */ = {
@@ -362,7 +293,6 @@
 		};
 		CA56F90D28136E2800470A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C05C332DC76A0047F3EF0873 /* Pods-TUeats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,7 +321,6 @@
 		};
 		CA56F90E28136E2800470A40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 172E6C2EE1DAA906EB3D9DA5 /* Pods-TUeats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
