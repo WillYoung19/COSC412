@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 
-
-
 struct ProductScreen: View {
     var selectedRestaurant: Restaurant
 
