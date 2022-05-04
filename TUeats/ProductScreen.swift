@@ -83,8 +83,8 @@ struct ProductScreen: View {
 
 struct ProductListItem: View {
     var product: Product
-    
-    var body: some View {
+    @State private var qty: Int = 0
+        var body: some View {
             HStack{
                 
                 Group{
@@ -104,7 +104,12 @@ struct ProductListItem: View {
 
                 Group{
                     Button {
-                        print("button pressed")
+                        if (qty > 0){
+                            qty -= 0
+                        }
+                        else{
+                            qty = 0
+                        }
                     } label: {
                         Text("-")
                             .foregroundColor(.white)
@@ -113,13 +118,13 @@ struct ProductListItem: View {
                     .background(Color.darkGray2)
                     .cornerRadius(20.0)
 
-                    Text(" 0 ")
+                    Text(" " + String(qty) + " ")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
 
                     
                     Button {
-                        print("button pressed")
+                        qty += 1
                     } label: {
                         Text("+")
                             .foregroundColor(.white)
