@@ -12,7 +12,7 @@ struct CurrentOrderScreen: View {
     var body: some View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
-            
+             
             
         }
     }

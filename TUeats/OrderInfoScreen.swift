@@ -16,12 +16,70 @@ struct OrderInfoScreen: View {
     @State private var lname: String = ""
     @State private var TUID: String = ""
 
-    
+    @EnvironmentObject var cartManager: CartMgr
+
     var body: some View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 8){
+                Text("Please enter your details below:")
+                    .foregroundColor(.white)
+                    .font(.title2)
+                
+                Group{
+                    TextField("", text: $fname)
+                        .placeholder(when: fname.isEmpty) {
+                            Text("First Name")
+                        }
+                        .padding(.leading, 10)
+                    
+                    TextField("", text: $lname)
+                        .placeholder(when: lname.isEmpty) {
+                            Text("Last Name")
+                        }
+                        .padding(.leading, 10)
+
+                    TextField("", text: $TUID)
+                        .placeholder(when: TUID.isEmpty) {
+                            Text("TUID")
+                        }
+                        .padding(.leading, 10)
+                    
+                }
+                .foregroundColor(.white)
+                    .frame(width: screenWidth-200, height:40)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.darkGray4))
             
-            
+                Spacer()
+                
+                NavigationLink{
+                    CartScreen()
+                        .environmentObject(cartManager)
+                } label: {
+                    Text("Purchase")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: screenWidth-50 , height: boxHeight)
+                        .background(Color.blue)
+                        .cornerRadius(10.0)
+                }.padding(.trailing, 10)
+                
+                NavigationLink{
+                    MainScreen()
+                } label: {
+                    Text("Cancel Order")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: screenWidth-50 , height: boxHeight)
+                        .background(Color.darkGray4)
+                        .cornerRadius(10.0)
+                }
+    
+                
+            }
         }
+        .navigationTitle("Order Information")
     }
 }

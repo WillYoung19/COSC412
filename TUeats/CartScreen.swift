@@ -34,13 +34,14 @@ struct CartScreen: View {
                             Spacer()
                         }
                         .foregroundColor(.white)
-                        .font(.title)
+                        .font(.title3)
 
 
                         
                         
                         NavigationLink{
                             OrderInfoScreen()
+                                .environmentObject(cartManager)
                         } label: {
                             Text("Checkout")
                                 .font(.title2)
