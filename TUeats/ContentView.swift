@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var isActive = false
     
     var body: some View {
+     
+     /*
         NavigationView {
             ZStack {
                 Menu {
@@ -60,16 +62,15 @@ struct ContentView: View {
                         EmptyView()
                     })
                 
-                LoginScreen()
                 
             }.background(Color.darkGray)
-        }
+        }*/
+        LoginScreen()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        //LoginScreen()
     }
 }

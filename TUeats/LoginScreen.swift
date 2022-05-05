@@ -58,6 +58,8 @@ struct LoginScreen: View {
                     })
                 }
             }.navigationBarHidden(true)
+                .navigationBarColor(backgroundColor: .clear, titleColor: .white)
+
         }
     }
 }

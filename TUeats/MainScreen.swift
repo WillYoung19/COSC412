@@ -10,19 +10,56 @@ import SwiftUI
 import WrappingHStack
 
 struct MainScreen: View {
+    @State private var navigateTo: AnyView?
+    @State private var isActive = false
+    
     var body: some View {
         ZStack{
             Color.darkGray.edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 10){
-            
-                Text("Select a Restaurant")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.leading, 14)
-                    .padding(.top, 10)
+                HStack{
+                    Text("Select a Restaurant")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(.leading, 14)
+                        .padding(.top, 10)
+                    
+                    Menu {
+                        Button {
+                            self.navigateTo = AnyView(CurrentOrderScreen())
+                            self.isActive = true
+                        } label: {
+                            Text("Current Orders")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .background(Color.darkGray4)
+                        }
+                        Button {
+                            self.navigateTo = AnyView(HelpScreen())
+                            self.isActive = true
+                        } label: {
+                            Text("FAQ - Help")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .background(Color.darkGray4)
+                        }.padding(.trailing, 290).offset(y: -100)
+
+                    } label: {
+                        //Text("")
+                        Image("BurgerMenu")
+                            .resizable()
+                            .frame(width:50, height:50)
+                    }                .background(
+                        NavigationLink(destination: self.navigateTo, isActive: $isActive) {
+                            EmptyView()
+                        })
+                    
+                }
                 
                 WrappingHStack{
                     RestaurantBox(restaurant: restaurantList[0])

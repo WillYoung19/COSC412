@@ -98,7 +98,7 @@ struct ProductScreen_Previews: PreviewProvider {
 
 struct ProductListItem: View {
     @EnvironmentObject var cartManager: CartMgr
-    @State private var qty: Int = 0
+    //@State private var qty: Int = 0
     var product: Product
 
     var body: some View {
@@ -108,7 +108,7 @@ struct ProductListItem: View {
                 Text(product.name + "\n")
                     .fontWeight(.bold) +
                 
-                Text("Price: $" + String(product.price * Double(qty)))
+                Text("Price: $" + String(product.price))
             }
             .padding(.leading, 6)
             .padding(.top, 6)
@@ -158,7 +158,7 @@ struct ProductListItem: View {
             .foregroundColor(.black)
             
         }
-        .frame(width: screenWidth)
+        .frame(width: screenWidth-16)
         .background(Color.darkGray4)
         .cornerRadius(10.0)
         
