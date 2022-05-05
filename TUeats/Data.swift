@@ -7,6 +7,10 @@
 
 import Foundation
 import SwiftUI
+import Firebase
+import FirebaseDatabase
+
+//var ref: DatabaseReference!
 
 let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
@@ -37,9 +41,9 @@ struct Restaurant: Identifiable {
     var isClosed: Bool = false
 }
 
-class CartMgr {
-    var products: [Product] = []
-    var total_price: Double = 0
+class CartMgr: ObservableObject {
+    @Published private(set) var products: [Product] = []
+    @Published private(set) var total_price: Double = 0
     
     func addToCart(product: Product){
         products.append(product)

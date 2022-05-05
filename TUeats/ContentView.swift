@@ -18,15 +18,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-struct MainScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        MainScreen()
-    }
-}
-
-struct CartScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CartScreen()
-    }
-}

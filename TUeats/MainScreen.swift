@@ -66,6 +66,12 @@ struct RestaurantBox: View {
     }
 }
 
+struct MainScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        MainScreen()
+    }
+}
+
 struct RestaurantStatusText: View {
     var restaurant: Restaurant
 

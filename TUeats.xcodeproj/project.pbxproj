@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA49CF4528232F860063B161 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA49CF4428232F860063B161 /* GoogleService-Info.plist */; };
+		CA49CF61282335DD0063B161 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF60282335DD0063B161 /* FirebaseAnalytics */; };
+		CA49CF63282335DD0063B161 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF62282335DD0063B161 /* FirebaseAnalyticsSwift */; };
+		CA49CF65282335DD0063B161 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF64282335DD0063B161 /* FirebaseDatabase */; };
+		CA49CF67282335DD0063B161 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF66282335DD0063B161 /* FirebaseDatabaseSwift */; };
 		CA56F90228136E2600470A40 /* TUeatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56F90128136E2600470A40 /* TUeatsApp.swift */; };
 		CA56F90428136E2600470A40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA56F90328136E2600470A40 /* ContentView.swift */; };
 		CA56F90628136E2800470A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA56F90528136E2800470A40 /* Assets.xcassets */; };
@@ -21,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA49CF4428232F860063B161 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA56F8FE28136E2600470A40 /* TUeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA56F90128136E2600470A40 /* TUeatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUeatsApp.swift; sourceTree = "<group>"; };
 		CA56F90328136E2600470A40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA49CF67282335DD0063B161 /* FirebaseDatabaseSwift in Frameworks */,
+				CA49CF63282335DD0063B161 /* FirebaseAnalyticsSwift in Frameworks */,
+				CA49CF61282335DD0063B161 /* FirebaseAnalytics in Frameworks */,
+				CA49CF65282335DD0063B161 /* FirebaseDatabase in Frameworks */,
 				CA9F57862817346500EE583D /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +75,7 @@
 		CA56F90028136E2600470A40 /* TUeats */ = {
 			isa = PBXGroup;
 			children = (
+				CA49CF4428232F860063B161 /* GoogleService-Info.plist */,
 				CA56F90128136E2600470A40 /* TUeatsApp.swift */,
 				CA56F90328136E2600470A40 /* ContentView.swift */,
 				CA9F578B281903EF00EE583D /* LoginScreen.swift */,
@@ -105,6 +116,10 @@
 			name = TUeats;
 			packageProductDependencies = (
 				CA9F57852817346500EE583D /* WrappingHStack */,
+				CA49CF60282335DD0063B161 /* FirebaseAnalytics */,
+				CA49CF62282335DD0063B161 /* FirebaseAnalyticsSwift */,
+				CA49CF64282335DD0063B161 /* FirebaseDatabase */,
+				CA49CF66282335DD0063B161 /* FirebaseDatabaseSwift */,
 			);
 			productName = TUeats;
 			productReference = CA56F8FE28136E2600470A40 /* TUeats.app */;
@@ -136,6 +151,7 @@
 			mainGroup = CA56F8F528136E2600470A40;
 			packageReferences = (
 				CA9F57842817346500EE583D /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CA56F8FF28136E2600470A40 /* Products */;
 			projectDirPath = "";
@@ -153,6 +169,7 @@
 			files = (
 				CA56F90928136E2800470A40 /* Preview Assets.xcassets in Resources */,
 				CA56F90628136E2800470A40 /* Assets.xcassets in Resources */,
+				CA49CF4528232F860063B161 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +388,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CA9F57842817346500EE583D /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dkk/WrappingHStack";
@@ -382,6 +407,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA49CF60282335DD0063B161 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CA49CF62282335DD0063B161 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		CA49CF64282335DD0063B161 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CA49CF66282335DD0063B161 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA49CF5F282335DD0063B161 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		CA9F57852817346500EE583D /* WrappingHStack */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA9F57842817346500EE583D /* XCRemoteSwiftPackageReference "WrappingHStack" */;
