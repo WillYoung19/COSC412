@@ -13,8 +13,7 @@ struct ProductScreen: View {
     @StateObject var cartManager = CartMgr()
 
     var selectedRestaurant: Restaurant
-    let boxWidth: CGFloat = (screenWidth / 2) - 14
-    let boxHeight: CGFloat = 50
+
     
     var body: some View {
         ZStack{
@@ -53,28 +52,15 @@ struct ProductScreen: View {
                         CartScreen()
                             .environmentObject(cartManager)
                     } label: {
-                        Text("Checkout")
+                        Text("Go to Cart")
                             .font(.headline)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
-                            .frame(width: boxWidth , height: boxHeight)
+                            .frame(width: screenWidth-40 , height: boxHeight)
                             .background(Color.darkGray4)
                             .cornerRadius(10.0)
                     }
 
-                    
-                    Button {
-                        print("A")
-                        //cartManager.addToCart(product: productList1[0])
-                    } label: {
-                        Text("Add to Cart")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .frame(width: boxWidth , height: boxHeight)
-                            .background(Color.darkGray4)
-                            .cornerRadius(10.0)
-                    }
                 }
             }
         }
@@ -108,7 +94,7 @@ struct ProductListItem: View {
                 Text(product.name + "\n")
                     .fontWeight(.bold) +
                 
-                Text("Price: $" + String(product.price))
+                Text("Price:  $" + String(product.price))
             }
             .padding(.leading, 6)
             .padding(.top, 6)

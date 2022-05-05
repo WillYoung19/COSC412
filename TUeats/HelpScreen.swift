@@ -46,9 +46,9 @@ struct HelpScreen: View {
                         .frame(width:200, height:200)
                         .offset(y: 550)
                     
-                }//.edgesIgnoringSafeArea(.all)
+                }
             
-            }.edgesIgnoringSafeArea(.all)
+            }.navigationTitle("Need Help?")
         }.background(Color.darkGray).foregroundColor(Color.white)
     }
 }

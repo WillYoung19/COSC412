@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA001D112824460300736D2E /* HelpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA001D102824460300736D2E /* HelpScreen.swift */; };
 		CA001D132824461100736D2E /* CurrentOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA001D122824461100736D2E /* CurrentOrderScreen.swift */; };
+		CA001D15282453A200736D2E /* OrderInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA001D14282453A200736D2E /* OrderInfoScreen.swift */; };
 		CA49CF4528232F860063B161 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA49CF4428232F860063B161 /* GoogleService-Info.plist */; };
 		CA49CF61282335DD0063B161 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF60282335DD0063B161 /* FirebaseAnalytics */; };
 		CA49CF63282335DD0063B161 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA49CF62282335DD0063B161 /* FirebaseAnalyticsSwift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		CA001D102824460300736D2E /* HelpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpScreen.swift; sourceTree = "<group>"; };
 		CA001D122824461100736D2E /* CurrentOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentOrderScreen.swift; sourceTree = "<group>"; };
+		CA001D14282453A200736D2E /* OrderInfoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoScreen.swift; sourceTree = "<group>"; };
 		CA49CF4428232F860063B161 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA56F8FE28136E2600470A40 /* TUeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA56F90128136E2600470A40 /* TUeatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUeatsApp.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				CA9F578D2819043900EE583D /* MainScreen.swift */,
 				CA9F578F281904C500EE583D /* ProductScreen.swift */,
 				CA9F57912819054F00EE583D /* CartScreen.swift */,
+				CA001D14282453A200736D2E /* OrderInfoScreen.swift */,
 				CA001D122824461100736D2E /* CurrentOrderScreen.swift */,
 				CA001D102824460300736D2E /* HelpScreen.swift */,
 				CA56F90528136E2800470A40 /* Assets.xcassets */,
@@ -195,6 +198,7 @@
 				CA001D132824461100736D2E /* CurrentOrderScreen.swift in Sources */,
 				CA9F578C281903EF00EE583D /* LoginScreen.swift in Sources */,
 				CA9F5790281904C500EE583D /* ProductScreen.swift in Sources */,
+				CA001D15282453A200736D2E /* OrderInfoScreen.swift in Sources */,
 				CA001D112824460300736D2E /* HelpScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

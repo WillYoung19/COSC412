@@ -29,16 +29,6 @@ struct MainScreen: View {
                     
                     Menu {
                         Button {
-                            self.navigateTo = AnyView(CurrentOrderScreen())
-                            self.isActive = true
-                        } label: {
-                            Text("Current Orders")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .background(Color.darkGray4)
-                        }
-                        Button {
                             self.navigateTo = AnyView(HelpScreen())
                             self.isActive = true
                         } label: {
@@ -47,7 +37,19 @@ struct MainScreen: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .background(Color.darkGray4)
+                        }
+                        
+                        Button {
+                            self.navigateTo = AnyView(CurrentOrderScreen())
+                            self.isActive = true
+                        } label: {
+                            Text("Current Orders")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .background(Color.darkGray4)
                         }.padding(.trailing, 290).offset(y: -100)
+
 
                     } label: {
                         //Text("")

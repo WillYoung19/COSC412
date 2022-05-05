@@ -15,6 +15,8 @@ import FirebaseDatabase
 let screenSize: CGRect = UIScreen.main.bounds
 let screenWidth = screenSize.width
 let screenHeight = screenSize.height
+let boxWidth: CGFloat = (screenWidth / 2) - 14
+let boxHeight: CGFloat = 50
 
 var productList1 = [Product(name: "Pizza", price: 10, rname: "Newell Den"),
                    Product(name: "Water", price: 1.50, rname: "Newell Den")]
@@ -51,6 +53,8 @@ class CartMgr: ObservableObject {
     }
     func removeFromCart(product: Product){
         products = products.filter {$0.id != product.id}
+
+        products = products
         total_price -= product.price
     }
 }
