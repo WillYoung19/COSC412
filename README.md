@@ -20,6 +20,5 @@ Initial Release Features:
 - Users will only be able to order from one eatery for the same order (cannot order from more than one eatery in the same order)
 
 
-Thank you for your support,
-
+Thank you for your support, 
 TU Eats team
