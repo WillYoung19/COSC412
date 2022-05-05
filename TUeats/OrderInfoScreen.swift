@@ -52,6 +52,12 @@ struct OrderInfoScreen: View {
             
                 Spacer()
                 
+                Group{
+                    Text("Order Total:  $") +
+                    Text(String(cartManager.total_price))
+                }.foregroundColor(.white)
+                .font(.title3)
+            
                 NavigationLink{
                     CartScreen()
                         .environmentObject(cartManager)

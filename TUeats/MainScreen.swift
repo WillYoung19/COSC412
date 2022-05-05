@@ -55,7 +55,8 @@ struct MainScreen: View {
                         //Text("")
                         Image("BurgerMenu")
                             .resizable()
-                            .frame(width:50, height:50)
+                            .frame(width:30, height:30)
+                            .padding(.trailing, 20)
                     }                .background(
                         NavigationLink(destination: self.navigateTo, isActive: $isActive) {
                             EmptyView()
