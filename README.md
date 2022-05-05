@@ -22,6 +22,8 @@ Initial Release Features:
 - Users will only be able to order from one eatery for the same order (cannot order from more than one eatery in the same order)
 - Menus of each supported restaurant/eatery will be tracked via Firebase real-time NoSQL database
 
+To Test:
+- Use the built in X-code simulator (Optimized for iPhone 13 Pro Max and iOS 15.4)
 
 Thank you for your support,    
 TU Eats team
