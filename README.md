@@ -20,6 +20,7 @@ Initial Release Features:
     - This means only "Login as Guest" functionality exists, and providing a TUID  will be required to make a purchase (And will be verified via a OneCard by the TU Eatery)
 - Have a choice to have items sent to a cart, but also have the option to check out immediately
 - Users will only be able to order from one eatery for the same order (cannot order from more than one eatery in the same order)
+- Menus of each supported restaurant/eatery will be tracked via Firebase real-time NoSQL database
 
 
 Thank you for your support,    
