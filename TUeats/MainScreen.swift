@@ -38,9 +38,9 @@ struct MainScreen: View {
                                 .foregroundColor(.white)
                                 .background(Color.darkGray4)
                         }
-                        
+                        /*
                         Button {
-                            self.navigateTo = AnyView(CurrentOrderScreen())
+                            self.navigateTo = AnyView(CurrentOrderScreen().)
                             self.isActive = true
                         } label: {
                             Text("Current Orders")
@@ -49,6 +49,7 @@ struct MainScreen: View {
                                 .foregroundColor(.white)
                                 .background(Color.darkGray4)
                         }.padding(.trailing, 290).offset(y: -100)
+                         */
 
 
                     } label: {

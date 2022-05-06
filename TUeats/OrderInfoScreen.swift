@@ -44,7 +44,6 @@ struct OrderInfoScreen: View {
                             Text("TUID")
                         }
                         .padding(.leading, 10)
-                    
                 }
                 .foregroundColor(.white)
                     .frame(width: screenWidth-200, height:40)
@@ -59,7 +58,7 @@ struct OrderInfoScreen: View {
                 .font(.title3)
             
                 NavigationLink{
-                    CartScreen()
+                    CurrentOrderScreen()
                         .environmentObject(cartManager)
                 } label: {
                     Text("Purchase")
