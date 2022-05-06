@@ -46,7 +46,7 @@ struct CartScreen: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .frame(width: screenWidth - 40 , height: boxHeight)
-                                .background(Color.darkGray4)
+                                .background(Color.blue)
                                 .cornerRadius(10.0)
                         }
                     }
@@ -81,18 +81,20 @@ struct CartItem: View {
     var body: some View {
         HStack{
             Text(product.name)
-                .fontWeight(.bold)
+                .fontWeight(.semibold)
                 .padding(.leading, 6)
                 .padding(.top, 6)
                 .padding(.bottom, 6)
                 .font(.title2)
                 .foregroundColor(.white)
-            Text("$" + String(product.price))
-                .font(.title2)
-                .padding(.leading, 20)
-                .foregroundColor(.white)
+
             
             Spacer()
+            
+            Text("$" + String(product.price))
+                .font(.title2)
+                .padding(.trailing, 20)
+                .foregroundColor(.white)
             
             Text("X")
                 .fontWeight(.bold)

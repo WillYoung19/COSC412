@@ -20,21 +20,21 @@ struct ProductScreen: View {
             
             VStack{
                 ScrollView{
-                    if (selectedRestaurant.name == "Newell Den"){
+                    if (selectedRestaurant.name == "Den Mangiamo"){
                         ForEach(productList1, id: \.id){ product in
                             ProductListItem(product: product)
                                 .environmentObject(cartManager)
                                 .padding(.bottom, -2)
                         }
                     }
-                    else if (selectedRestaurant.name == "Au Bon Pain"){
+                    else if (selectedRestaurant.name == "Den Delicatessen"){
                         ForEach(productList2, id: \.id){ product in
                             ProductListItem(product: product)
                                 .environmentObject(cartManager)
                                 .padding(.bottom, -2)
                         }
                     }
-                    else if (selectedRestaurant.name == "Deli"){
+                    else if (selectedRestaurant.name == "Au Bon Pain"){
                         ForEach(productList3, id: \.id){ product in
                             ProductListItem(product: product)
                                 .environmentObject(cartManager)
@@ -42,6 +42,15 @@ struct ProductScreen: View {
                                 
                         }
                     }
+                    else if (selectedRestaurant.name == "Panda Express"){
+                        ForEach(productList4, id: \.id){ product in
+                            ProductListItem(product: product)
+                                .environmentObject(cartManager)
+                                .padding(.bottom, -2)
+                                
+                        }
+                    }
+
                 }
                 
                 Spacer()
@@ -56,7 +65,7 @@ struct ProductScreen: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
                             .frame(width: screenWidth-40 , height: boxHeight)
-                            .background(Color.darkGray4)
+                            .background(Color.blue)
                             .cornerRadius(10.0)
                     }
 
@@ -91,7 +100,7 @@ struct ProductListItem: View {
             
             Group{
                 Text(product.name + "\n")
-                    .fontWeight(.bold) +
+                    .fontWeight(.semibold) +
                 
                 Text("Price:  $" + String(product.price))
             }
@@ -99,7 +108,7 @@ struct ProductListItem: View {
             .padding(.top, 6)
             .padding(.bottom, 6)
             
-            .font(.title2)
+            .font(.title3)
             .foregroundColor(.white)
             
             Spacer()
@@ -131,8 +140,9 @@ struct ProductListItem: View {
                 } label: {
                     Text("Add")
                         .foregroundColor(.white)
+                        .font(.title3)
                 }
-                .frame(width: 80, height: 40)
+                .frame(width: 70, height: 36)
                 .background(Color.darkGray2)
                 .cornerRadius(20.0)
                 .padding(.trailing, 20)

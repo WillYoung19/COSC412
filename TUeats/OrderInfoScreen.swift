@@ -15,6 +15,7 @@ struct OrderInfoScreen: View {
     @State private var fname: String = ""
     @State private var lname: String = ""
     @State private var TUID: String = ""
+    @State private var showingAlert = false
 
     @EnvironmentObject var cartManager: CartMgr
 
@@ -58,8 +59,14 @@ struct OrderInfoScreen: View {
                 .font(.title3)
             
                 NavigationLink{
+                    if(fname != "" && lname != "" && TUID != ""){
                     CurrentOrderScreen()
                         .environmentObject(cartManager)
+                    }
+                    else{
+                        OrderFailedScreen()
+
+                    }
                 } label: {
                     Text("Purchase")
                         .font(.headline)
@@ -68,6 +75,9 @@ struct OrderInfoScreen: View {
                         .frame(width: screenWidth-50 , height: boxHeight)
                         .background(Color.blue)
                         .cornerRadius(10.0)
+                        .alert("Important message", isPresented: $showingAlert) {
+                            Button("OK", role: .cancel) { }
+                        }
                 }.padding(.trailing, 10)
                 
                 NavigationLink{
@@ -87,3 +97,24 @@ struct OrderInfoScreen: View {
         .navigationTitle("Order Information")
     }
 }
+
+struct OrderFailedScreen: View {
+    
+
+    var body: some View {
+        ZStack{
+            Color.darkGray2.edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 8){
+                
+                Text("Please bo back and ensure your order information is correct")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .padding(.leading, -20)
+
+                Spacer()
+            }
+
+        }.navigationTitle("Order Failed")
+    }
+}
+

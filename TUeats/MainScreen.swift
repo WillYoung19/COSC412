@@ -70,6 +70,8 @@ struct MainScreen: View {
                     RestaurantBox(restaurant: restaurantList[1])
                     RestaurantBox(restaurant: restaurantList[2])
                         .padding(.top, 6)
+                    RestaurantBox(restaurant: restaurantList[3])
+                        .padding(.top, 6)
                 }.padding(.leading, 10)
                                 
                 Spacer()
