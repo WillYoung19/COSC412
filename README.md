@@ -1,5 +1,6 @@
 # COSC412.104
-# https://github.com/WillYoung19/COSC412
+https://github.com/WillYoung19/COSC412
+
 All material related to COSC412 Project: TU Eats
 
 Authors: Chris Conover, Brandon Grabowski, Asher Prusky, and Will Young
