@@ -27,14 +27,12 @@ struct CurrentOrderScreen: View {
                     .font(.title2)
                     .foregroundColor(.white)
                     .padding(.top, 40)
-
                 
                 Text("Please have your OneCard or Phone ready to verify your identify")
                     .font(.title2)
                     .foregroundColor(.white)
                     .padding(.top, 40)
 
-            
                 Spacer()
                 
                 NavigationLink{

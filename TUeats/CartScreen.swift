@@ -33,12 +33,10 @@ struct CartScreen: View {
                                 .bold()
                             Spacer()
                         }
+                        .frame(width: screenWidth-40, height: 40, alignment: .leading)
                         .foregroundColor(.white)
                         .font(.title3)
 
-
-                        
-                        
                         NavigationLink{
                             OrderInfoScreen()
                                 .environmentObject(cartManager)
@@ -48,11 +46,10 @@ struct CartScreen: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .frame(width: screenWidth - 40 , height: boxHeight)
-                                .background(Color.darkGray3)
+                                .background(Color.darkGray4)
                                 .cornerRadius(10.0)
                         }
                     }
-                    
                     else{
                         Text("Cart is Empty")
                             .font(.title2)
@@ -61,7 +58,6 @@ struct CartScreen: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .padding(.leading, 20)
                         Spacer()
-
                     }
                 }
                 
@@ -73,7 +69,6 @@ struct CartScreen_Previews: PreviewProvider {
     static var previews: some View {
         CartScreen()
             .environmentObject(CartMgr())
-        
     }
 }
 
@@ -107,7 +102,6 @@ struct CartItem: View {
                 .onTapGesture {
                     cartManager.removeFromCart(product: product)
                 }
-            
         }
         .frame(width: screenWidth - 16, height: 50)
         .background(Color.darkGray3)

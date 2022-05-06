@@ -85,19 +85,17 @@ struct RestaurantBox: View {
     let boxHeight: CGFloat = 200
     var body: some View {
         NavigationLink(destination: ProductScreen(selectedRestaurant: restaurant), label: {
-            
-            VStack(alignment: .leading, spacing: 4){
-                
-                Text(restaurant.name)
-                .foregroundColor(.white)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 6)
-                .padding(.top, 6)
-                
-                RestaurantStatusText(restaurant: restaurant)
+                VStack(alignment: .leading, spacing: 4){
+                    Text(restaurant.name)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 6)
+                    .padding(.top, 6)
+                    
+                    RestaurantStatusText(restaurant: restaurant)
+                        .padding(.leading, 6)
                 
             }.frame(width: boxWidth, height: boxHeight, alignment: .topLeading)
                 .background(Color.darkGray3)

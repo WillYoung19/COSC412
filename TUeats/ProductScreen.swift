@@ -14,10 +14,9 @@ struct ProductScreen: View {
 
     var selectedRestaurant: Restaurant
 
-    
     var body: some View {
         ZStack{
-            Color.darkGray3.edgesIgnoringSafeArea(.all)
+            Color.darkGray2.edgesIgnoringSafeArea(.all)
             
             VStack{
                 ScrollView{
@@ -134,10 +133,9 @@ struct ProductListItem: View {
                         .foregroundColor(.white)
                 }
                 .frame(width: 80, height: 40)
-                .background(Color.darkGray3)
+                .background(Color.darkGray2)
                 .cornerRadius(20.0)
                 .padding(.trailing, 20)
-                
                 
             }
             .font(.title2)
@@ -145,7 +143,7 @@ struct ProductListItem: View {
             
         }
         .frame(width: screenWidth-16)
-        .background(Color.darkGray4)
+        .background(Color.darkGray3)
         .cornerRadius(10.0)
         
     }

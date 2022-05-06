@@ -13,6 +13,8 @@ extension Color {
 
     static let darkGray = Color(red: 0.1, green: 0.1, blue: 0.1)
     static let darkGray2 = Color(red: 0.2, green: 0.2, blue: 0.2)
+    static let darkGray22 = Color(red: 0.25, green: 0.25, blue: 0.25)
+
     static let darkGray3 = Color(red: 0.3, green: 0.3, blue: 0.3)
     static let darkGray4 = Color(red: 0.4, green: 0.4, blue: 0.4)
     

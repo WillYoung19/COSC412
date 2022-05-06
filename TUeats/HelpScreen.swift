@@ -24,15 +24,21 @@ struct HelpScreen: View {
                 ScrollView{
                    FAQBox(question: "What payment methods are supported",
                            answer: "The first release will only support Apple Pay. We plan to eventually add TU Meal Plan Points as an alternative method.")
+                            .padding(.bottom, 20)
                     
                     FAQBox(question: "How do I view past transactions?",
-                            answer: "Once this functionality is implemented, you may view past orders using the dropdown menu in the main screen.")
+                            answer: "Once this functionality is implemented,  you may view past orders using the dropdown menu in the main screen.")
+                            .padding(.bottom, 20)
 
-                    FAQBox(question: "Who created TU Eats??",
+
+                    FAQBox(question: "Who created TU Eats?",
                             answer: "A team of four Towson University students known as Team Sigma and TUe.")
+                            .padding(.bottom, 20)
+
 
                     FAQBox(question: "Who do I contact support?",
                             answer: "You may contact us via GitHub using the button below.")
+                            .padding(.bottom, 20)
                 }
                 
                 Spacer()
@@ -71,11 +77,7 @@ struct FAQBox: View {
     var answer: String
     
     var body: some View {
-        
-
-            
-
-        
+    
         VStack(alignment: .leading, spacing: 6){
             Text("Q: " + question)
                 .font(.title3)
@@ -87,9 +89,9 @@ struct FAQBox: View {
                 .foregroundColor(.white)
                 .padding(.bottom, 10)
                 .padding(.top, 10)
-                .padding(.trailing, 10)
+                .padding(.leading, 10)
                 .frame(maxWidth: screenWidth, alignment: .leading)
-                .background(Color.darkGray3)
+                .background(Color.darkGray22)
                 .cornerRadius(8)
 
         }
