@@ -82,7 +82,6 @@ struct OrderInfoScreen: View {
                         .cornerRadius(10.0)
                 }
     
-                
             }
         }
         .navigationTitle("Order Information")

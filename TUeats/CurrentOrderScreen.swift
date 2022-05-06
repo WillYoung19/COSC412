@@ -16,15 +16,52 @@ struct CurrentOrderScreen: View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading, spacing: 8){
-                Text(cartManager.products[0].rname + " Order Successful")
+                
+                Text("Order Successful")
                     .font(.title)
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
-                Text("Your order for " + String(cartManager.total_price) + " will be ready for pickup soon")
+                    .padding(.top, 40)
+                
+                Text("Your order for $" + String(cartManager.total_price) + " will be ready for pickup soon at " + cartManager.products[0].rname)
                     .font(.title2)
                     .foregroundColor(.white)
+                    .padding(.top, 40)
+
                 
+                Text("Please have your OneCard or Phone ready to verify your identify")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .padding(.top, 40)
+
+            
                 Spacer()
-            }
+                
+                NavigationLink{
+                    MainScreen()
+                } label: {
+                    Text("Go Home")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: screenWidth-50 , height: boxHeight)
+                        .background(Color.darkGray4)
+                        .cornerRadius(10.0)
+                }
+                NavigationLink{
+                    MainScreen()
+                } label: {
+                    Text("Cancel Order")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: screenWidth-50 , height: boxHeight)
+                        .background(Color.darkGray4)
+                        .cornerRadius(10.0)
+                }
+            }.frame(width: screenWidth-50)
+
         }.navigationTitle("My Orders")
+       .navigationBarHidden(true)
     }
 }

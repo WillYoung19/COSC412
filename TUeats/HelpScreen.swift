@@ -9,52 +9,97 @@ import Foundation
 import SwiftUI
 
 struct HelpScreen: View {
-    
-    @State private var fullText: String = " - What payment methods does TUEats currently accept?"
-    
+        
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 4) {
-                ZStack {
+        ZStack{
+            Color.darkGray2.edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 8){
                 
-                    Color.darkGray
-            
-                    Text("Need Help?")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        //.padding(.bottom, 60)
-                        .frame(width: 260 , height: 50, alignment: .top)
-                        //.padding(.top, 50.0)
-            
-                    Text("FAQ: ")
-                        .font(.title)
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.white)
-                        .offset(y: 30)
-                        .padding(.trailing, 265.0)
+                Text("FAQ:")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top, 30)
+
+                ScrollView{
+                   FAQBox(question: "What payment methods are supported",
+                           answer: "The first release will only support Apple Pay. We plan to eventually add TU Meal Plan Points as an alternative method.")
                     
-                    Text(" - What payment methods are currently accepted by TUEats?\n\n - How do you access past transactions made through the app?\n\n - Who should I contact in case of an ordering error?")
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.white)
-                        .frame(width: screenWidth)
-                        .offset(y: 150)
-                        .padding(.trailing, -20)
-                    
-                    Image("TUTiger")
-                        .resizable()
-                        .frame(width:200, height:200)
-                        .offset(y: 550)
-                    
+                    FAQBox(question: "How do I view past transactions?",
+                            answer: "Once this functionality is implemented, you may view past orders using the dropdown menu in the main screen.")
+
+                    FAQBox(question: "Who created TU Eats??",
+                            answer: "A team of four Towson University students known as Team Sigma and TUe.")
+
+                    FAQBox(question: "Who do I contact support?",
+                            answer: "You may contact us via GitHub using the button below.")
                 }
+                
+                Spacer()
             
-            }.navigationTitle("Need Help?")
-        }.background(Color.darkGray).foregroundColor(Color.white)
+                Text("Need more help? Find us on GitHub:")
+                    .font(.title2)
+                    .foregroundColor(.white)
+
+                Button{
+                    if let url = URL(string: "https://github.com/WillYoung19/COSC412"){
+                                UIApplication.shared.open(url, options: [:])}
+                } label: {
+                    Text("GitHub")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(width: screenWidth-40 , height: boxHeight)
+                        .background(.blue)
+                        .cornerRadius(10.0)
+                }
+            }.frame(width: screenWidth-40)
+
+        }.navigationTitle("Need Help?")
     }
 }
 
 struct Previews_HelpScreen_Previews: PreviewProvider {
     static var previews: some View {
         HelpScreen()
+    }
+}
+
+
+struct FAQBox: View {
+    var question: String
+    var answer: String
+    
+    var body: some View {
+        
+
+            
+
+        
+        VStack(alignment: .leading, spacing: 6){
+            Text("Q: " + question)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+            
+            Text(answer)
+                .font(.title3)
+                .foregroundColor(.white)
+                .padding(.bottom, 10)
+                .padding(.top, 10)
+                .padding(.trailing, 10)
+                .frame(maxWidth: screenWidth, alignment: .leading)
+                .background(Color.darkGray3)
+                .cornerRadius(8)
+
+        }
+        
+    }
+}
+
+struct FAQBox_Previews: PreviewProvider {
+    static var previews: some View {
+        FAQBox(question: "Who Created TUEats?",
+               answer: "A team of four software engineers known as Team Sigma and TUe")
     }
 }
