@@ -2,8 +2,11 @@
 All material related to COSC412 Project: TU Eats
 
 Authors: Chris Conover, Brandon Grabowski, Asher Prusky, and Will Young
+
 Version: 1.1
+
 Release: May 5th, 2022
+
 TU Eats: Towson Universities First Food Ordering Mobile App
 
 TU Eats is our on campus food ordering platform that makes picking up food from your favorite on campus eatery.
