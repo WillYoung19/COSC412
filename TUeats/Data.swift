@@ -105,3 +105,37 @@ class CartMgr: ObservableObject {
     }
 }
 
+struct Order: Identifiable {
+    var id = UUID()
+    var products: [Product] = []
+    var total_price: Double = 0
+    var fname: String = ""
+    var lname: String = ""
+    var tuid: String = ""
+}
+
+func createOrder(prodlist: [Product], total_price: Double, fname: String, lname: String, tuid: String) -> Order
+{
+    var order = Order()
+    order.products = prodlist
+    order.total_price = total_price
+    order.fname = fname
+    order.lname = lname
+    order.tuid = tuid
+    return order
+}
+
+class OrderMgr: ObservableObject {
+    @Published private(set) var orders: [Order] = []
+    
+    func addOrder(order: Order){
+        orders.append(order)
+    }
+    func removeOrder(order: Order){
+        orders = orders.filter {$0.id != order.id}
+
+    }
+
+}
+
+

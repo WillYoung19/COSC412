@@ -32,6 +32,7 @@ struct CurrentOrderScreen: View {
                     .font(.title2)
                     .foregroundColor(.white)
                     .padding(.top, 40)
+                
 
                 Spacer()
                 

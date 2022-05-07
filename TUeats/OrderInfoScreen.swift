@@ -19,6 +19,7 @@ struct OrderInfoScreen: View {
 
     @EnvironmentObject var cartManager: CartMgr
 
+
     var body: some View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
@@ -51,7 +52,7 @@ struct OrderInfoScreen: View {
                     .background(RoundedRectangle(cornerRadius: 8).fill(Color.darkGray4))
             
                 Spacer()
-                
+
                 Group{
                     Text("Order Total:  $") +
                     Text(String(cartManager.total_price))
@@ -60,8 +61,8 @@ struct OrderInfoScreen: View {
             
                 NavigationLink{
                     if(fname != "" && lname != "" && TUID != ""){
-                    CurrentOrderScreen()
-                        .environmentObject(cartManager)
+                        CurrentOrderScreen()
+                            .environmentObject(cartManager)
                     }
                     else{
                         OrderFailedScreen()
@@ -106,7 +107,7 @@ struct OrderFailedScreen: View {
             Color.darkGray2.edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading, spacing: 8){
                 
-                Text("Please bo back and ensure your order information is correct")
+                Text("Please go back and ensure your order information is correct")
                     .font(.title2)
                     .foregroundColor(.white)
                     .padding(.leading, -20)
