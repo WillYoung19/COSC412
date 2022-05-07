@@ -11,7 +11,10 @@ import SwiftUI
 struct CurrentOrderScreen: View {
     
     @EnvironmentObject var cartManager: CartMgr
-
+    var fname: String = ""
+    var lname: String = ""
+    var TUID: String = ""
+    
     var body: some View {
         ZStack{
             Color.darkGray2.edgesIgnoringSafeArea(.all)
@@ -23,18 +26,40 @@ struct CurrentOrderScreen: View {
                     .foregroundColor(.white)
                     .padding(.top, 40)
                 
+                Text("Thank you " + fname)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .padding(.top, 10)
+
+                
                 Text("Your order for $" + String(cartManager.total_price) + " will be ready for pickup soon at " + cartManager.products[0].rname)
                     .font(.title2)
                     .foregroundColor(.white)
-                    .padding(.top, 40)
+                    .padding(.top, 30)
                 
                 Text("Please have your OneCard or Phone ready to verify your identify")
                     .font(.title2)
                     .foregroundColor(.white)
-                    .padding(.top, 40)
-                
+                    .padding(.top, 30)
 
+                
+                Text("Order Details:")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.top, 40)
+                    
+                Group{
+                    Text("Name: " + fname + " " + lname)
+                    Text("Order Price: $" + String(cartManager.total_price))
+                    Text("Restaurant: " + cartManager.products[0].rname)
+
+                }.font(.title2)
+                    .foregroundColor(.white)
+                    .padding(.top, -4)
+                
                 Spacer()
+
                 
                 NavigationLink{
                     MainScreen()

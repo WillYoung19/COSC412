@@ -61,7 +61,7 @@ struct OrderInfoScreen: View {
             
                 NavigationLink{
                     if(fname != "" && lname != "" && TUID != ""){
-                        CurrentOrderScreen()
+                        CurrentOrderScreen(fname: fname, lname: lname, TUID: TUID)
                             .environmentObject(cartManager)
                     }
                     else{
