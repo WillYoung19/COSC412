@@ -7,8 +7,6 @@
 
 import Foundation
 import SwiftUI
-import Firebase
-import FirebaseDatabase
 
 //var ref: DatabaseReference!
 
